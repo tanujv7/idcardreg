@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student ID Request Form</title>
+<style>
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    label {
+        display: block;
+        font-weight: bold;
+    }
+    input[type="text"], input[type="file"] {
+        width: 100%;
+        padding: 0.5rem;
+        margin-top: 0.3rem;
+    }
+    input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<h2>Student Information Form</h2>
+
+
+<form action="{{ url_for('IDCARDFORM')}}" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="student_id">Student ID (Format: W#######):</label>
+        <input type="text" id="student_id" name="student_id" pattern="W\d{7}" title="Please enter a valid student ID starting with 'W' followed by 7 digits" required>
+    </div>
+    <div class="form-group">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required>
+    </div>
+    <div class="form-group">
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required>
+    </div>
+    <div class="form-group">
+        <label for="program">Program:</label>
+        <input type="text" id="program" name="program" required>
+    </div>
+    <div class="form-group">
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+    </div>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
