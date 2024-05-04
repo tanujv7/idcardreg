@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 import pyodbc
 import os
 app = Flask(__name__)
-app.config['UPLOAD_PATH'] = r'C:\xampp\htdocs\TANUJ_PHP\StudentIDForm\IDCardform\uploads'
+app.config['UPLOAD_PATH'] = r'$PWD/uploads/'
 
 @app.route('/',methods=["GET", "POST"])
 
